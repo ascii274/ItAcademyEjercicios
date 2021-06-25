@@ -6,13 +6,13 @@ public class Main {
 	
 	public static void main (String[] args) {
 		Scanner scanner = new Scanner (System.in);
-		
-		enterCitutaImostra(scanner); // nivell 1 fase 1
-		ordenaCiutat(scanner); // nivell 1 fase 2
+		//enterCitutaImostra(scanner); // nivell 1 fase 1
+		//ordenaCiutat(scanner); // nivell 1 fase 2
+		cambiaNomsPelNumero(scanner); // nivell 1 fase 3
 
-		
 	}
 	
+	// nivell 1 fase 1
 	static void enterCitutaImostra(Scanner scanner) {
 		String nom1,nom2,nom3,nom4,nom5,nom6;
 		
@@ -37,9 +37,11 @@ public class Main {
 		System.out.println("La ciudad 5: " + nom5);
 		System.out.println("La ciudad 6: " + nom6);
 		
+		
 	}
 	
-	static void ordenaCiutat(Scanner scanner ) {
+	// metode per guardar ciutats en un array i retorna array
+	static ArrayList<String> enterCiutatArray(Scanner scanner){		
 		ArrayList<String> misCiudades = new ArrayList<String>();		
 		String nomCiutat;
 		int cantCiutat;
@@ -51,6 +53,14 @@ public class Main {
 			nomCiutat = scanner.nextLine();
 			misCiudades.add(nomCiutat);
 		}
+		return misCiudades;		
+	}
+	
+	// nivell 1 fase 2
+	static void ordenaCiutat(Scanner scanner ) {
+		ArrayList<String> misCiudades = new ArrayList<String>();
+		// llamamos metodo
+		misCiudades = enterCiutatArray(scanner);		
 		Collections.sort(misCiudades);
 		System.out.println("\n***** Las ciudades ordenadas *****");
 		for( String s:misCiudades) {
@@ -59,5 +69,24 @@ public class Main {
 		
 	}
 	
+	// nivell 1 fase 3
+	static void cambiaNomsPelNumero(Scanner scanner) {
+		ArrayList<String> misCiudades = new ArrayList<String>();
+		ArrayList<String> ciudadesModificadas = new ArrayList<String>();
+		String nomCiudad;
+		//rellenamos array ciudad
+		misCiudades = enterCiutatArray(scanner);
+		// recorremos array misciudades y volcamos a nuevo array
+		for (int j = 0; j < misCiudades.size(); j++) {
+			nomCiudad = misCiudades.get(j).replace('a', '4');
+			ciudadesModificadas.add(nomCiudad);
+		}
+		Collections.sort(ciudadesModificadas);
+		System.out.println("\n ***** Cambiando caracter a por 4 *****");
+		for (String c : ciudadesModificadas) {
+			System.out.println(c);
+		}
+		
+	}
 
 }
