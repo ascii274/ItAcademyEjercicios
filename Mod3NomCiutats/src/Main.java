@@ -13,7 +13,6 @@ public class Main {
 		ciutatsNomInvertits(); // nivell 1 fase 4
 		notesAlumnes(scanner); // nivell 2
 		sequenciaFibonacci(); // nivell 4
-
 		System.out.println("\n***** Fin Programa ****");
 	}
 	
