@@ -11,8 +11,8 @@ public class Main {
 		ordenaCiutat(scanner); // nivell 1 fase 2
 		cambiaNomsPelNumero(scanner); // nivell 1 fase 3
 		ciutatsNomInvertits(); // nivell 1 fase 4
-		//notesAlumnes(scanner); // nivell 2
-		//sequenciaFibonacci(); // nivell 4
+		notesAlumnes(scanner); // nivell 2
+		sequenciaFibonacci(); // nivell 4
 		System.out.println("\n***** Fin Programa ****");
 	}
 	
@@ -41,10 +41,7 @@ public class Main {
 		System.out.println("La ciudad 4: " + nom4);
 		System.out.println("La ciudad 5: " + nom5);
 		System.out.println("La ciudad 6: " + nom6);
-		
-		
 	}
-
 	/*
 	 * metode per guardar ciutats en un array i retorna array
 	 */
@@ -106,6 +103,7 @@ public class Main {
 		misCiudades.add("Madrid");
 		char[] roma	= new char [misCiudades.get(0).length()];
 		//pasamos textos a array
+		System.out.println("\n***** Ciutats invertits *****");
 		for ( String m:misCiudades){
 			char[] miChar = new char[m.length()];
 			m.getChars(0,m.length(),miChar,0);
@@ -129,7 +127,8 @@ public class Main {
 		double notas [][] = new double[5][3];
 		int numAlumno=0, opc=-1;
 		while(opc !=0){
-			System.out.println("\n1.Alta notas.");
+			System.out.println("\n ***** Registro notas *****");
+			System.out.println("1.Alta notas.");
 			System.out.println("0.Salir.");
 			opc = scanner.nextInt();
 			switch (opc){
@@ -176,7 +175,7 @@ public class Main {
 			if(mediaNota >=5 && mediaNota<= 10){
 				System.out.println("L'alumne " + numAlumno + " ha aprovat amb " + mediaNota);
 			}else {
-				System.out.println("L'alumne" + numAlumno + " ha suspés amb " + mediaNota);
+				System.out.println("L'alumne " + numAlumno + " ha suspés amb " + mediaNota);
 			}
 			mediaNota = 0.0;
 		}
