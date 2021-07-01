@@ -54,7 +54,7 @@ public class Main {
                 System.out.println("Desea pedir mas? (1:Si/0:No)");
                 opcPedir = scanner.nextInt();
                 if (opcPedir == 0) { // forzamos salida si es el caso
-                    numeroPlato = 0; // plato 0: salir
+                    numeroPlato = 0; // plato 0: salir del bucle
                 } else if (opcPedir == 1) {
                     numeroPlato = 1;
                 } else {
