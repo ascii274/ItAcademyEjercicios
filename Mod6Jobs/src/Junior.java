@@ -6,7 +6,5 @@ public class Junior extends Employees {
 		super(name, address, phone,salaryPerMonth);
 		
 	}
-	
-	
 
 }
