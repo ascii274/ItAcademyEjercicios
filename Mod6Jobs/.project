@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/Employees.java</name>
-			<type>1</type>
-			<location>/home/joel/Programacion/Employees.java</location>
-		</link>
-	</linkedResources>
 </projectDescription>
