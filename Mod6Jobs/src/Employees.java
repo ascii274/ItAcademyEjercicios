@@ -30,23 +30,19 @@ public class Employees {
 	public double calcularPlus(int tipoEmpleado) {		
 		//0:volunteer plus 1:Employee 2:Manager 3:Boss1
 		double totalPlus=0.0;
-		try {			
-			
+		try {	
 			switch (tipoEmpleado) {		
 				case 0:// volunteer
-					totalPlus =  (salaryPerMonth * 0)/100;
+					totalPlus = 0;
 				
 				case 1:// employee			
-					totalPlus =  (salaryPerMonth * 15)/100;		
-					//souNetMensual = totalP;// no tiene reduccion ifpf		
+					totalPlus = salaryPerMonth * 0.15;
 					break;
 				case 2://Manager
-					totalPlus =  (salaryPerMonth * 10)/100;
-					//souNetMensual = totalP -((totalP * 26) /100);
+					totalPlus = salaryPerMonth * 0.10;
 					break;
 				case 3://Boss
-					totalPlus =  (salaryPerMonth * 50)/100;
-					//souNetMensual = totalP -((totalP * 32) /100);
+					totalPlus = salaryPerMonth * 0.50;
 					break;	
 				}
 		} catch (Exception e) {
@@ -94,7 +90,8 @@ public class Employees {
 		double bonus=0.0;
 		
 		try {		
-			bonus =(salaryAnual * 10 ) / 100;
+			//bonus =(salaryAnual * 10 ) / 100;
+			bonus =salaryAnual * 0.10 ;
 			//return bonus;
 			salaryPerMonth = salaryPerMonth + bonus;	
 		} catch (Exception e) {
