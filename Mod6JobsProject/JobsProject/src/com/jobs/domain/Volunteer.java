@@ -8,7 +8,9 @@ public class Volunteer extends AbsStaffMember {
 		super(name, address, phone);
 		
 		//inicializamos propiedad final description
+		
 		description="No cobra!";
+		totalPaid = 0;
 	}
 
 	
@@ -20,7 +22,8 @@ public class Volunteer extends AbsStaffMember {
 	
 	//borrar
 	public String toString() {
-		return "Emp [name=" + name + ", address:" + address +", phone:" + phone + ", descripció=" + description  + "]\n";
+		return "Emp [name=" + name + ", address:" + address +", phone:" + phone 
+				+ ", descripció=" + description  + ", totalP=" +  totalPaid + "]\n";
 		
 	}
 

@@ -26,7 +26,7 @@ public class JobsController {
 	}
 
 	public void createManagerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
-		Employee managerEmployee = new Employee(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateEmployee());
+		Employee managerEmployee = new Employee(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateManager());
 		repository.addMember(managerEmployee);		
 	}
 	public void createVolunteer(String name, String address, String phone) throws Exception{

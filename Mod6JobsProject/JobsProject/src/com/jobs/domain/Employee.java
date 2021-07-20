@@ -22,7 +22,8 @@ public class Employee extends AbsStaffMember {
 	
 	// redefinimos por heredar a una clase abstracta 
 	public String toString() {
-		return "Emp [name=" + name + ", address:" + address +", phone:" + phone + ", salaryPerMonth=" + salaryPerMonth + ", totalP=" + totalPaid +"]\n";
+		return "Emp [name=" + name + ", address:" + address +", phone:" + phone 
+				+ ", salaryPerMonth=" + salaryPerMonth + ", totalP=" + paymentRate.pay(salaryPerMonth) +"]\n";
 	}
 
 }
