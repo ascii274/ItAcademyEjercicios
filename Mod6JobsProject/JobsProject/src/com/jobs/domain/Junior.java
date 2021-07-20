@@ -6,5 +6,10 @@ public class Junior extends Employee{
 		super(name, address, phone, salaryPerMonth, paymentRate);
 	}
 	
+	public String toString() {
+		return "Jun [name=" + name + ", address:" + address +", phone:" + phone 
+				+ ", salaryPerMonth=" + salaryPerMonth + ", totalP=" + paymentRate.pay(salaryPerMonth) +"]\n";
+	}
+	
 
 }

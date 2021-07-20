@@ -20,9 +20,9 @@ public class Volunteer extends AbsStaffMember {
 		
 	}
 	
-	//borrar
+
 	public String toString() {
-		return "Emp [name=" + name + ", address:" + address +", phone:" + phone 
+		return "Vol [name=" + name + ", address:" + address +", phone:" + phone 
 				+ ", descripció=" + description  + ", totalP=" +  totalPaid + "]\n";
 		
 	}
