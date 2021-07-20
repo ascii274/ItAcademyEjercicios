@@ -19,9 +19,10 @@ public class Main {
 		
 		controller.payAllEmployeers();
 		
-		String allEmployees=controller.getAllEmployees();
 		
-		System.out.println("EMPLOYEES: " + allEmployees + " \n");
+		String allEmployees=controller.getAllEmployees();
+		System.out.println("EMPLOYEES: \n" + allEmployees);
+		
 		
 	}
 

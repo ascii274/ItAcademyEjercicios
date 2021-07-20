@@ -19,5 +19,10 @@ public class Employee extends AbsStaffMember {
 	public void pay() {
 		totalPaid=paymentRate.pay(salaryPerMonth);
 	}
+	
+	// redefinimos por heredar a una clase abstracta 
+	public String toString() {
+		return "Emp [name=" + name + ", address:" + address +", phone:" + phone + ", salaryPerMonth=" + salaryPerMonth + ", totalP=" + totalPaid +"]\n";
+	}
 
 }

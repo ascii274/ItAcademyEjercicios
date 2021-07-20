@@ -1,23 +1,23 @@
 package com.jobs.application;
 
-import javax.sound.midi.Soundbank;
 
+import java.util.List;
+import com.jobs.domain.AbsStaffMember;
 import com.jobs.domain.Employee;
+import com.jobs.domain.Volunteer;
 import com.jobs.persistence.EmployeeRepository;
+
 
 public class JobsController {
 
-	private EmployeeRepository repository;
-	
+	private EmployeeRepository repository = new EmployeeRepository();	
 	public JobsController(){
 		
 	}
 	
-	public void createBossEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
-		repository = new EmployeeRepository();
+	public void createBossEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{	
 		Employee boss = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateBoss());
 		repository.addMember(boss);
-		
 	}
 	
 	public void createEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{		
@@ -26,10 +26,13 @@ public class JobsController {
 	}
 
 	public void createManagerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
-		// TODO Auto-generated method stub
-		
+		Employee managerEmployee = new Employee(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateEmployee());
+		repository.addMember(managerEmployee);		
 	}
-
+	public void createVolunteer(String name, String address, String phone) throws Exception{
+		Volunteer volunteer = new Volunteer(name, address, phone);
+		repository.addMember(volunteer);		
+	}
 
 	public void payAllEmployeers() {
 		// TODO Auto-generated method stub
@@ -37,15 +40,16 @@ public class JobsController {
 	}
 
 	public String getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		List<AbsStaffMember> lista = repository.getAllMembers();
+		String datos="";		
+		//for(int i=0;i<lista.size();i++) {
+		//	System.out.println(lista.get(i));
+		//}
+		for(AbsStaffMember absMember:lista) {
+			datos = datos + absMember ;	
+		}
+		return datos;
+	}	
 
-	public void createVolunteer(String string, String string2, String string3) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 	
 }
