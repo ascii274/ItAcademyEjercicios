@@ -1,7 +1,9 @@
 package com.jobs.domain;
 
 public class Volunteer extends AbsStaffMember {
+	// generamos otra clase hija y redefinimos metodos abstractos de la clase super;
 	private final String description;// valor constante
+	protected int bonus;
 
 	//public Volunteer(String name, String address, String phone, String description) throws Exception {
 	public Volunteer(String name, String address, String phone) throws Exception {
@@ -15,17 +17,24 @@ public class Volunteer extends AbsStaffMember {
 		totalPaid=0;		
 	}
 	
-	// ayuda economica
+	
+	/* Nivel 3. 
+	 * - ayuda economica
+	 */
 	public double governmentEconomicAid() {
 		return 300.0;
 	}
 	
 
 	public String toString() {
-		return "Vol [name=" + name + ", address:" + address +", phone:" + phone 
-				+ ", descripció=" + description  + ", totalP=" +  totalPaid 
+		return "Vol [name=" + name + ",\taddress:" + address + ",\tphone:" + phone 
+				+ ",\tdescripció=" + description  + ", totalP=" +  totalPaid 
 				+ " , Ajut=" + governmentEconomicAid()+ "]\n";
 		
+	}
+	
+	public void setBonus() {
+		bonus=0;		
 	}
 
 }

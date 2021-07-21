@@ -29,6 +29,13 @@ public class Main {
 		controller.payAllEmployeers();
 		String allEmployees=controller.getAllEmployees();
 		System.out.println("EMPLOYEES:\n" + allEmployees);
+		
+		//nivel 3
+		System.out.println("\n ****** Bonus ******");
+		controller.bonusAllEmployees();
+		controller.payAllEmployeers();
+		
+		
 	}
 
 }
