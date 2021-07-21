@@ -5,25 +5,26 @@ public class Volunteer extends AbsStaffMember {
 
 	//public Volunteer(String name, String address, String phone, String description) throws Exception {
 	public Volunteer(String name, String address, String phone) throws Exception {
-		super(name, address, phone);
-		
-		//inicializamos propiedad final description
-		
-		description="No cobra!";
-		totalPaid = 0;
+		super(name, address, phone);		
+		//inicializamos propiedad final description		
+		description="No cobra!";		
 	}
-
 	
 	@Override
 	public void pay() {
-		//TODO
-		
+		totalPaid=0;		
+	}
+	
+	// ayuda economica
+	public double governmentEconomicAid() {
+		return 300.0;
 	}
 	
 
 	public String toString() {
 		return "Vol [name=" + name + ", address:" + address +", phone:" + phone 
-				+ ", descripció=" + description  + ", totalP=" +  totalPaid + "]\n";
+				+ ", descripció=" + description  + ", totalP=" +  totalPaid 
+				+ " , Ajut=" + governmentEconomicAid()+ "]\n";
 		
 	}
 

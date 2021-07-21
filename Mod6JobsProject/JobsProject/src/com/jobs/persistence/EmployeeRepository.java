@@ -17,8 +17,7 @@ public class EmployeeRepository {
 	}
 	
 	public List<AbsStaffMember> getAllMembers(){		
-		return new ArrayList<>(members);	
-
+		return new ArrayList<>(members);
 	}
 	
 		

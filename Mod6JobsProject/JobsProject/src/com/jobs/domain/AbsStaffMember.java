@@ -8,6 +8,8 @@ public abstract class AbsStaffMember {
 	protected String phone;
 	protected double totalPaid=0;
 
+	
+
 	private static int COUNTER_MEMBERS = 1;
 
 	public AbsStaffMember(String name, String address, String phone) throws Exception {
