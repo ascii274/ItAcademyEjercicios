@@ -6,12 +6,8 @@ public class Senior extends Employee{
 	}
 	
 	public String toString() {
-		return "Sen [name=" + name + ", address:" + address +", phone:" + phone 
-				+ ", salaryPerMonth=" + salaryPerMonth + ", totalP=" + paymentRate.pay(salaryPerMonth) 
-				+ " ,salaryGrossMonthly=" + paymentRate.payGrossMonthly(salaryPerMonth) 
-				+ " ,salaryNetMonthly=" + paymentRate.payNetMonthly(salaryPerMonth)
-				+ " ,salaryGrossYearly=" + paymentRate.payGrossMonthly(salaryPerMonth)*12 
-				+ " ,salaryNetYearly=" + paymentRate.payNetMonthly(salaryPerMonth)*12
+		return "Sen [name=" + name + ",\taddress:" + address +", phone:" + phone 
+				+ ",\tsalaryPerMonth=" + salaryPerMonth + ",\ttotalP=" + paymentRate.pay(salaryPerMonth)
 				+"]\n";
 	}
 

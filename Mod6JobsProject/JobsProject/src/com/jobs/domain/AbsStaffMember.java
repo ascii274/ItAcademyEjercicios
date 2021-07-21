@@ -1,6 +1,7 @@
 package com.jobs.domain;
 
 public abstract class AbsStaffMember {
+	//generamos clase base
 
 	protected int id;
 	protected String name;
@@ -26,9 +27,12 @@ public abstract class AbsStaffMember {
 		id = COUNTER_MEMBERS;
 		COUNTER_MEMBERS++;
 	}
-
+	
+	// generamos metodos sin cuerpo para que sea redefinido en clases hijos.
 	public abstract void pay();
 	public abstract String toString();
+	//nivell 3
+	public abstract void setBonus();
 	
 	
 }
