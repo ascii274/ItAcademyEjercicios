@@ -2,14 +2,20 @@ package com.jobs.domain;
 
 public class Volunteer extends AbsStaffMember {
 	// generamos otra clase hija y redefinimos metodos abstractos de la clase super;
+	protected double salaryPerMonth;
 	private final String description;// valor constante
 	protected int bonus;
 
 	//public Volunteer(String name, String address, String phone, String description) throws Exception {
-	public Volunteer(String name, String address, String phone) throws Exception {
-		super(name, address, phone);		
+	public Volunteer(String name, String address, String phone, double salaryPerMonth) throws Exception {
+		super(name, address, phone);
+		
+		if(salaryPerMonth > 0) throw new Exception();				
+		salaryPerMonth = 0;
 		//inicializamos propiedad final description		
-		description="No cobra!";		
+		description="No cobra!";	
+		
+		
 	}
 	
 	@Override

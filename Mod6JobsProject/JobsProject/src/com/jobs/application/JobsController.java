@@ -2,6 +2,7 @@ package com.jobs.application;
 
 
 
+import java.io.IOException;
 import java.util.List;
 
 import com.jobs.domain.AbsStaffMember;
@@ -27,40 +28,71 @@ public class JobsController {
 	public JobsController(){
 		
 	}
+	// throws-> lanzara una exception el try catch
+	public void createBossEmployee(String name, String address, String phone, double salaryPerMonth, int tipoEmpleado) throws Exception{
+		//0:Boss 1:Manager 2: Employee 3:Senior 4:Mid 5:Junior 6:Volunteer
+		try {
+			Employee boss = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateBoss(),tipoEmpleado);
+			repository.addMember(boss);			
+		}catch(Exception e) {
+			System.out.println("El salario de  Boss debe ser mayor de 8000.");			
+		}
+	}
+	
+	public void createEmployee(String name, String address, String phone, double salaryPerMonth, int tipoEmpleado) throws Exception{
+		//0:Boss 1:Manager 2: Employee 3:Senior 4:Mid 5:Junior 6:Volunteer
+		Employee employee = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateEmployee(),tipoEmpleado);
+		repository.addMember(employee);
+	}
 
-	public void createBossEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{	
-		Employee boss = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateBoss());
-		repository.addMember(boss);
+	public void createManagerEmployee(String name, String address, String phone, double salaryPerMonth, int tipoEmpleado) throws Exception{		
+		try {
+			Employee managerEmployee = new Employee(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateManager(),tipoEmpleado);
+			repository.addMember(managerEmployee);			
+		}catch(Exception e) {
+			System.out.println("El salario de  Manager debe ser mayor de 3000 y menor igual de 5000.");			
+		}		
 	}
 	
-	public void createEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{		
-		Employee boss = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateEmployee());
-		repository.addMember(boss);
-	}
-
-	public void createManagerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
-		Employee managerEmployee = new Employee(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateManager());
-		repository.addMember(managerEmployee);		
-	}
-	public void createVolunteerEmployee(String name, String address, String phone) throws Exception{
-		Volunteer volunteer = new Volunteer(name, address, phone);
-		repository.addMember(volunteer);		
+	public void createVolunteerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
+		try {
+			Volunteer volunteer = new Volunteer(name, address, phone, salaryPerMonth);
+			repository.addMember(volunteer);
+			
+		}catch(Exception e) {
+			System.out.println("El salario de  volunteer debe ser 0.");
+		}				
 	}
 	
 	
-	public void createJuniorEmployee (String name, String address, String phone, double salaryPerMonth) throws Exception{
-		Junior junior = new Junior(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateJunior());
-		repository.addMember(junior);
+	public void createJuniorEmployee (String name, String address, String phone, double salaryPerMonth, int tipoEmpleado) throws Exception{	
+		try {
+			Junior junior = new Junior(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateJunior(),tipoEmpleado);
+			repository.addMember(junior);
+			
+		}catch(Exception e) {
+			System.out.println("El salario de Junior debe ser mayor de 900 y menor igual de 1600");
+		}		
 	}
 	
-	public void createMidEmployee (String name, String address, String phone, double salaryPerMonth) throws Exception{
-		Mid mid = new Mid(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateMid());
-		repository.addMember(mid);
+	public void createMidEmployee (String name, String address, String phone, double salaryPerMonth, int tipoEmpleado) throws Exception{
+		try {
+			Mid mid = new Mid(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateMid(),tipoEmpleado);
+			repository.addMember(mid);			
+		}catch(Exception e) {
+			System.out.println("El salario de Mid debe ser mayor de 1800 y menor o igual de 2500");			
+		}
 	}
 	
-	public void createSeniorEmployee (String name, String address, String phone, double salaryPerMonth) throws Exception{
-		Senior senior = new Senior(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateSenior());
-		repository.addMember(senior);
+	public void createSeniorEmployee (String name, String address, String phone, double salaryPerMonth, int tipoEmpleado) throws Exception{
+		try {
+			Senior senior = new Senior(name, address, phone, salaryPerMonth, PaymentFactory.createPaymentRateSenior(),tipoEmpleado);
+			repository.addMember(senior);			
+		}catch (Exception e) {
+			System.out.println("El salario de Senior debe ser mayor de 2700 y menor o igual de 4000");
+			
+		}
+		
 	}
 
 	public String getAllEmployees() {

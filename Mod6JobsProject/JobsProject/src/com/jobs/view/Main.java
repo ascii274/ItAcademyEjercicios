@@ -18,13 +18,17 @@ public class Main {
 		//controller.createManagerEmployee("Pedro Employee", "Dirección molona 2", "665226666", 80.0,0);
 		
 		
-		//nivell 2 y 3
-		controller.createBossEmployee("Pepe Boss", "Dirección molona", "666666666", 8000.0);
-		controller.createManagerEmployee("Juan Manager", "Gran via 2", "55544433",4300.0);		
-		controller.createSeniorEmployee("Joan Senior", "Gran via 90","6004004444",3000);
-		controller.createMidEmployee("Marta Mid", "Gran via 60", "6005005555", 2200.0);
-		controller.createJuniorEmployee("Joel Junior", "Gran via 30", "600600666", 1200.0);
-		controller.createVolunteerEmployee("Silvia Volunteer", "Gran via 14", "333222111");
+		/*
+		 * nivell 2 y 3
+		 * 0:Boss 1:Manager 2:Employee 3:Senior 4:Mid 5:Junior 6:Volunteer
+		 */
+
+		controller.createBossEmployee("Pepe Boss", "Dirección molona", "666666666", 9000.0,0);
+		controller.createManagerEmployee("Juan Manager", "Gran via 2", "55544433",2000.0,1);		
+		controller.createSeniorEmployee("Joan Senior", "Gran via 90","6004004444",3000,3);
+		controller.createMidEmployee("Marta Mid", "Gran via 60", "6005005555", 2200.0,4);
+		controller.createJuniorEmployee("Joel Junior", "Gran via 30", "600600666", 1200.0,2);
+		controller.createVolunteerEmployee("Silvia Volunteer", "Gran via 14", "333222111",0);
 		
 		controller.payAllEmployeers();
 		String allEmployees=controller.getAllEmployees();
