@@ -54,7 +54,7 @@ public class JobsController {
 		}		
 	}
 	
-	public void createVolunteerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
+	public void createVolunteerEmployee(String name, String address, String phone, double salaryPerMonth,int tipoEmpleado) throws Exception{
 		try {
 			Volunteer volunteer = new Volunteer(name, address, phone, salaryPerMonth);
 			repository.addMember(volunteer);

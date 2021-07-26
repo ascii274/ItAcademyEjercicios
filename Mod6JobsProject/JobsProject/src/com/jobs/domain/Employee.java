@@ -21,7 +21,7 @@ public class Employee extends AbsStaffMember {
 			if(salaryPerMonth <= 8000) throw new Exception();
 			break;
 		case 1: // manager
-			if(salaryPerMonth < 3000 || salaryPerMonth >5000) throw new Exception();
+			if(salaryPerMonth <=3000 || salaryPerMonth >=5000) throw new Exception();
 			break; 
 		case 2:// employee
 			if(salaryPerMonth > 0) throw new Exception();

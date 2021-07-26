@@ -24,11 +24,11 @@ public class Main {
 		 */
 
 		controller.createBossEmployee("Pepe Boss", "Dirección molona", "666666666", 9000.0,0);
-		controller.createManagerEmployee("Juan Manager", "Gran via 2", "55544433",2000.0,1);		
+		controller.createManagerEmployee("Juan Manager", "Gran via 2", "55544433",4000.0,1);		
 		controller.createSeniorEmployee("Joan Senior", "Gran via 90","6004004444",3000,3);
 		controller.createMidEmployee("Marta Mid", "Gran via 60", "6005005555", 2200.0,4);
-		controller.createJuniorEmployee("Joel Junior", "Gran via 30", "600600666", 1200.0,2);
-		controller.createVolunteerEmployee("Silvia Volunteer", "Gran via 14", "333222111",0);
+		controller.createJuniorEmployee("Joel Junior", "Gran via 30", "600600666", 700.0,5);
+		controller.createVolunteerEmployee("Silvia Volunteer", "Gran via 14", "333222111",0,6);
 		
 		controller.payAllEmployeers();
 		String allEmployees=controller.getAllEmployees();
