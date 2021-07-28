@@ -7,5 +7,11 @@ public class Wheel {
 	public Wheel(String brand, double diameter) {
 		this.brand = brand;
 		this.diameter = diameter;
+	}	
+	
+
+	
+	public String toString() {
+		return "Wheel[brand:" +  brand + " , diameter:" + diameter + "]\n";
 	}
 }
