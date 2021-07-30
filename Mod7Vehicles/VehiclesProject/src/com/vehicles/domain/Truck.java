@@ -1,7 +1,9 @@
-package com.vehicles.project;
+package com.vehicles.domain;
 
 import java.util.List;
 
+
+// Nivel 2 Fase 1
 public class Truck extends Vehicle{
 	
 	public Truck (String plate, String brand, String color) {
@@ -26,7 +28,17 @@ public class Truck extends Vehicle{
 		this.wheels.add(leftWheel);
 		this.wheels.add(rightWheel);
 	}
+	public String toString(){
+		return "Truck[Plate:" + plate + " ,Brand:" + brand + ", Color:" + color +"]\n";
+	}
 
+	public String getAllWheels() {
+		String datos="";
+		for(Wheel w:wheels) {
+			datos = datos + w;
+		}
+		return datos;
+	}
 
 	
 	
