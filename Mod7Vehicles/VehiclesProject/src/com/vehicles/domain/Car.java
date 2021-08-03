@@ -42,25 +42,24 @@ public class Car extends Vehicle {
 		return datos;
 	}
 	
-	public List<Wheel> pideDatosRuedas(int delanteraTrasera) throws Exception {
+	public List<Wheel> pideDatosRuedas(int delanteraOTrasera) throws Exception {
 		List<Wheel> myWheels = new ArrayList<Wheel>();		
 		String wheelBrand="" ;
 		double wheelDiameter = 0.0;
 		Wheel wheel;
-		if(delanteraTrasera==0) {//pregunta para rueda delantera
+		if(delanteraOTrasera==0) {//pregunta para rueda delantera
 			wheelBrand = JOptionPane.showInputDialog ("Introduce la marca ruedas delanteras:");			
 			wheelDiameter = Double.parseDouble(JOptionPane.showInputDialog ("Introduce el diametro de la rueda delanteras:"));
 		}
-		if(delanteraTrasera==1) {// pregunta para reuda trasera
+		if(delanteraOTrasera==1) {// pregunta para reuda trasera
 			wheelBrand = JOptionPane.showInputDialog ("Introduce la marca ruedas traseras:");
 			wheelDiameter = Double.parseDouble(JOptionPane.showInputDialog ("Introduce el diametro de la rueda traseras:"));
 		}		
 		
 		wheel = new Wheel(wheelBrand, wheelDiameter);
-		if(!wheel.validarDiametroRueda(wheelDiameter))throw new Exception();		
+		if(!wheel.validarDiametroRueda(wheelDiameter))throw new Exception("El diametro debe ser mayor 0.4 y menor de 4.");
 		myWheels.add(wheel);// dos veces porque las ruedas deben ser iguales a la par
-		myWheels.add(wheel);
-		
+		myWheels.add(wheel);		
 		return myWheels;
 	}
 	

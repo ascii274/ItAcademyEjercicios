@@ -1,3 +1,7 @@
+/**
+ * CAPA PERSISTANCE: fa de intermediari entre el controlador 
+ * y la base de dades
+ */
 package com.vehicles.persistance;
 
 import java.util.ArrayList;
@@ -6,6 +10,7 @@ import java.util.List;
 import com.vehicles.domain.Vehicle;
 
 public class VehicleRepository {
+	
 	
 	private static List<Vehicle> myVehicles = new ArrayList<Vehicle>();
 	

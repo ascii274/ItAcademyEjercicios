@@ -1,49 +1,48 @@
 package com.vehicles.application;
 
-import java.util.ArrayList;
+
 import java.util.List;
-
-import javax.swing.DefaultRowSorter;
-import javax.swing.JOptionPane;
-
 import com.vehicles.domain.Bike;
 import com.vehicles.domain.Car;
 import com.vehicles.domain.Truck;
 import com.vehicles.domain.Vehicle;
-import com.vehicles.domain.Wheel;
 import com.vehicles.persistance.VehicleRepository;
 
 public class VehicleController {
-	//aqui creare todos los vehiculos
+	
 	private VehicleRepository myVehicleRepository = new VehicleRepository();
 	public VehicleController() {		
 	}
 	
-	public void createCar(String plate, String brand, String color)  throws Exception {
+
+	public void createCar(String plate, String brand, String color) {
 		try {
-			Car car = new Car(plate, brand, color);			
-			// validamos matricula			
-			if(!car.validarMatricula(plate)) throw new Exception();
-			//agregamos ruedas.
-				car.addWheels(car.pideDatosRuedas(0),car.pideDatosRuedas(1));			
-				myVehicleRepository.addVehicle(car);
+			Car car = new Car(plate, brand, color);
+			if(car.validarMatricula(plate)) {
+				car.addWheels(car.pideDatosRuedas(0), car.pideDatosRuedas(1));
+				myVehicleRepository.addVehicle(car);				
+			}
+			
 		} catch (Exception e) {
-			System.out.println("Error al crear Coche");
-		}			
+			System.out.println(e.getMessage());
+		}
+			
 	}
 	
-	public void createBike (String plate, String brand, String color)  throws Exception {
+	public void createBike (String plate, String brand, String color)  {
 		try {
 			Bike bike = new Bike(plate, brand, color);
-			if(!bike.validarMatricula(plate)) throw new Exception();
+			if(bike.validarMatricula(plate)) {
 				bike.addWheels(bike.pideDatosRuedas(0),bike.pideDatosRuedas(1));
 				myVehicleRepository.addVehicle(bike);			
+			}
+							
 		} catch (Exception e) {
-			System.out.println("Error al crear la Motocicleta.");
+			System.out.println(e.getMessage());
 		}
 	}
 	
-	public void createTruck (String plate, String brand, String color)  throws Exception {
+	public void createTruck (String plate, String brand, String color) {
 		try {
 			Truck truck = new Truck(plate, brand, color);
 			if(!truck.validarMatricula(plate)) throw new Exception();			
@@ -54,9 +53,7 @@ public class VehicleController {
 		}
 	}
 	
-	
-	
-	public String mostrarVehiculos() {
+	public String mostrarVehiculos() throws Exception{
 		//mostrar ruedas? -> lo muestro para saber que todo funciona bien
 		List<Vehicle> myVehicles = myVehicleRepository.getAllVehicles();
 		String datos="";

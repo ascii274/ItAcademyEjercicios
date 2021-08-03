@@ -28,9 +28,17 @@ public abstract class Vehicle {
 	 */
 	public boolean validarMatricula(String plateNumber)  throws Exception{
 		//validamos formato matricula
+		boolean matriculaCrrecta;
 		plateNumber = plateNumber.toUpperCase();
-	    return plateNumber.matches("^[0-9]{4}[A-Z]{3}$");
+		matriculaCrrecta = plateNumber.matches("^[0-9]{4}[A-Z]{3}$");
+	    if(!matriculaCrrecta) throw new Exception("Error con el formato de la matricula");
+	    return matriculaCrrecta;
 	}
+	
+	public String getPlate() {
+		return plate;
+	}
+	
 	
 
 	

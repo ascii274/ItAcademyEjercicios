@@ -42,23 +42,23 @@ public class Bike extends Vehicle {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Wheel> pideDatosRuedas(int delanteraTrasera) throws Exception {
+	public List<Wheel> pideDatosRuedas(int delanteraOTrasera) throws Exception {
 		//pido datos de rueda y devuelvo el listado con 1 rueda.
 		List<Wheel> myWheels = new ArrayList<Wheel>();		
 		String wheelBrand="";
 		double wheelDiameter = 0.0;
 		Wheel wheel;
-		if(delanteraTrasera==0) {//pregunta para rueda delantera
-			wheelBrand = JOptionPane.showInputDialog ("Introduce la marca ruedas delanteras:");			
-			wheelDiameter = Double.parseDouble(JOptionPane.showInputDialog ("Introduce el diametro de la rueda delanteras:"));
+		if(delanteraOTrasera==0) {//pregunta para rueda delantera
+			wheelBrand = JOptionPane.showInputDialog ("Introduce la marca rueda delantera:");			
+			wheelDiameter = Double.parseDouble(JOptionPane.showInputDialog ("Introduce el diametro de la rueda delantera:"));
 		}
-		if(delanteraTrasera==1) {// pregunta para reuda trasera
-			wheelBrand = JOptionPane.showInputDialog ("Introduce la marca ruedas traseras:");
-			wheelDiameter = Double.parseDouble(JOptionPane.showInputDialog ("Introduce el diametro de la rueda traseras:"));
+		if(delanteraOTrasera==1) {// pregunta para reuda trasera
+			wheelBrand = JOptionPane.showInputDialog ("Introduce la marca rueda trasera:");
+			wheelDiameter = Double.parseDouble(JOptionPane.showInputDialog ("Introduce el diametro de la rueda trasera:"));
 		}		
 		
 		wheel = new Wheel(wheelBrand, wheelDiameter);
-		if(!wheel.validarDiametroRueda(wheelDiameter))throw new Exception();		
+		if(!wheel.validarDiametroRueda(wheelDiameter))throw new Exception("El diametro debe ser mayor 0.4 y menor de 4.");		
 		myWheels.add(wheel);// 
 		
 		return myWheels;
