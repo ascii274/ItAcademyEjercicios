@@ -21,6 +21,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {			
 		int opc;
 		String usuario;
+		
 		//descomentar el deseado la licencia deseada.
 		myPersonaController.crearTitular("Joel", "Cabatay", 18, 10, 1975, true, true, true,false);
 		myPersonaController.agregarLicenciaTitular("Joel", "B1", "Joel Cabatay", 2025, 10, 15);
@@ -32,6 +33,7 @@ public class Main {
 		int elUsuarioEsConductor;		
 		
 		try {
+			//System.out.println(myVehicleController.mostrarVehiculos());//recuerda toString en clase
 			switch (opc) {
 				case 1:// crear coche
 						// si la persona tiene carnet rellenamos los datos
@@ -74,14 +76,15 @@ public class Main {
 				default:
 					System.out.println("Solo opciones 1-2");
 				break;
+				
 			}
+			System.out.println(myPersonaController.mostrarDatosPersona()); // mostramos todos los datos nuevamente para ver cambios
+			System.out.println(myVehicleController.mostrarVehiculos());//recuerda toString en clase
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		
-		System.out.println(myPersonaController.mostrarDatosPersona()); // mostramos todos los datos nuevamente para ver cambios
-		System.out.println(myVehicleController.mostrarVehiculos());//recuerda toString en clase 
+		}		
+		 
 	}
 	
 	

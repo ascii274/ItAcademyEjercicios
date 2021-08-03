@@ -60,6 +60,7 @@ public class VehicleController {
 		for(Vehicle v:myVehicles) {
 			datos = datos + v + v.getAllWheels();
 		}
+		if(datos.equals("")) throw new Exception("No hay vehiculos disponibles");
 		return datos;
 	}
 	
